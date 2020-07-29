@@ -56,8 +56,8 @@ See the [Getting Started](https://github.com/ros2-forest/forest/tree/master/docs
 
 ## Examples
 
-1. Image Processing - Contrast Stretching
+1. [Image Processing - Contrast Stretching](https://github.com/ros2-forest/forest/tree/master/examples/contrast_stretch)
 
-2. Machine Learning - BNN for MNIST digit recognition
+2. [Machine Learning - BNN for MNIST digit recognition](https://github.com/ros2-forest/forest/tree/master/examples/mnist_bnn)
 
-3. Machine Learning - CNN for MNIST digit recognition
+3. [Machine Learning - CNN for MNIST digit recognition](https://github.com/ros2-forest/forest/tree/master/examples/mnist_cnn)
