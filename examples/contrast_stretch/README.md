@@ -14,7 +14,7 @@ Each of the three subdirectories (cs_128_64b/, cs_256_64b/, and cs_512_64b/) con
 
 ### design_files/
 
-This directory contains the HLS files for the project (contrast_stretch.cpp and contrast_stretch.h), as well as the config.forest file that is provided to Forest. Note that some information in the config.forest file might need to be changed if you are using it in your own workspace, such as the Absolute ROS2 dev_ws path, Absolute FPGA .bit file path, and User IP name. 
+This directory contains the HLS files for the project (contrast_stretch.cpp and contrast_stretch.h), as well as the config.forest file that is provided to Forest. Note that some information in the config.forest file will need to be changed if you are using it in your own workspace, such as the Absolute ROS2 dev_ws path, Absolute FPGA .bit file path, and User IP name. 
 
 ### imgs/
 
@@ -22,15 +22,15 @@ This directory contains the images that are sent to the FPGA to be contrast stre
 
 ### ros2_packages/
 
-This directory contains two ROS2 packages that shoudl be built ***on your PC*** (not on the Zynq board). They are the packages that define the nodes that send and receive image data to/from the FPGA. There is one change that has to be done for files in this directory. In the send_img.py file (https://github.com/ros2-forest/forest/blob/master/examples/contrast_stretch/cs_512_64b/ros2_packages/cs_512_64b/cs_512_64b/send_img.py), the line:
+This directory contains two ROS2 packages that should be built ***on your PC*** (not on the Zynq board). They are the packages that define the nodes that send and receive image data to/from the FPGA. There is one change that has to be done for files in this directory. In the send_img.py file (https://github.com/ros2-forest/forest/blob/master/examples/contrast_stretch/cs_512_64b/ros2_packages/cs_512_64b/cs_512_64b/send_img.py), the line:
 
 ```Python
 image_tiff = Image.open('/home/danielpi/Desktop/work/case_studies/contrast/imgs/test/512/' + self.images[self.i])
 ```
 
-Must be changed to the location of the imgs/ folder in your file system.
+Must be changed to use the location of the imgs/ folder in your file system.
 
-The node send_img.py puts the image in `uint64` format, publishes it to the fpga_in topic and plots it. The node receive_img.py subscribes to the fpga_out topic, and plots the output image. There is also a pc_sw_node.py that performs the contrast stretch operation in software. You can use it to compare the time taken to perform the computation in SW and in the FPGA HW.
+The node send_img.py puts the image in `uint64` format, publishes it to the fpga_in topic and plots it. The node receive_img.py subscribes to the fpga_out topic, and plots the output image. There is also a pc_sw_node.py node, which performs the contrast stretch operation in software. You can use it to compare the time taken to perform the computation in SW and in the FPGA HW.
 
 ## Running the Example Project
 
@@ -42,7 +42,7 @@ This is a step-by-step of how to run the linear contrast stretch example project
 
 3. Move the generated bitstream and .hwh files, as well as the config.forest file in the design_files/ directory to your PYNQ system. The config.forest must be placed in the same folder as your forest.py file.
 
-4. Update the config.forest file to account for the location of the ROS2 dev_ws directory and of the .bit and .hwh files in your PYNQ file system.
+4. Update the config.forest file to use the location of the ROS2 dev_ws directory and of the .bit and .hwh files in your PYNQ file system.
 
 5. Run Forest to generate the ROS2-FPGA node `python3 forest.py -t`
 
@@ -81,7 +81,7 @@ on an Intel Core i7-6500U processor, and on the Digilent Z7-20 ARM Cortex A9 pro
 
 ### Hardware Resource Usage
 
-The following images show the hardware resource usage reported by Vivado HLS for the 128x128, 256x256, and 512x512 contrast stretch designs, respectively.
+The following images show the hardware resource usage reported by Vivado HLS for the 128x128, 256x256, and 512x512 contrast stretch designs.
 
 - 128x128
 
