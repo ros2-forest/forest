@@ -71,8 +71,8 @@ and on an Intel Core i7-6500U processor:
 
 | Device | Device Latency (ms) | Ratio (Device Latency:FPGA Latency) |
 | :---:         |     ---:      |          ---: |
-| Intel CPU     |      |      |
-| FPGA   |     |     |
+| Intel CPU     |     58.8 |     8.53:1 |
+| FPGA   |    6.9 |     1:1|
 
 ### Accuracy Results
 
