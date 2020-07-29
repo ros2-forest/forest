@@ -27,7 +27,7 @@ class SendNode(Node):
         super().__init__('send')
         profile = QoSProfile(depth=10, reliability=QoSReliabilityPolicy.RMW_QOS_POLICY_RELIABILITY_RELIABLE, durability=QoSDurabilityPolicy.RMW_QOS_POLICY_DURABILITY_VOLATILE)
         self.publisher_ = self.create_publisher(FpgaIn, 'fpga_in_topic', profile)
-        timer_period = 0.5  # Frequency of publishing
+        timer_period = 5  # Frequency of publishing
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.N_ROWS=28
         self.N_COLS=28
@@ -57,7 +57,7 @@ class SendNode(Node):
             self.t1 = time.time()
             self.publisher_.publish(msg)
             # Plot image
-            '''if self.i == 0:
+            if self.i == 0:
                 self.fig, self.ax = plt.subplots(1,1)
                 self.im = self.ax.imshow(img_plt, cmap='gray')
                 plt.title("Input Image")
@@ -66,8 +66,8 @@ class SendNode(Node):
             else:
                 self.im.set_data(img_plt)
                 plt.draw()
-                plt.pause(1e-3)'''
-            self.get_logger().info("{} - t1:{}".format(self.i, self.t1))
+                plt.pause(1e-3)
+            #self.get_logger().info("{} - t1:{}".format(self.i, self.t1))
             self.i+=1
         else:
             self.get_logger().info("Done!")
