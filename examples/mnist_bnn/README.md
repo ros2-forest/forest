@@ -1,10 +1,10 @@
 # Forest Example Project - Binarized Neural Network for MNIST Digit Recognition
 
-Binarized neural networks are neural networks with weights and activations constrained to +1 and -1 at run time [1]. Since only one bit is required to store each weight 
+Binarized neural networks (BNNs) are neural networks with weights and activations constrained to +1 and -1 at run time [1]. Since only one bit is required to store each weight 
 in a BNN, as opposed to 32 bits in a full-precision standard neural network, BNNs require considerably less memory and hardware resources, thus enabling larger neural 
 networks to run on smaller FPGA boards.
 
-This example project consists of a binarized neural network (BNN) running on the FPGA being applied to the MNIST digit recognition task.
+This example project consists of a BNN running on the FPGA being applied to the MNIST digit recognition task.
 
 ## Requirements
 
@@ -26,9 +26,9 @@ The files for this project are located in two directories: design_files/ and ros
 ### design_files/
 
 This directory contains the HLS files for the project (.cpp and .h files), as well as the config.forest file that is provided to Forest. 
-Note that some information in the config.forest file will need to be changed if you are using it in your own workspace, such as the Absolute ROS2 dev_ws path, 
-Absolute FPGA .bit file path, and User IP name. All of the .h files with the exception of mnist_bnn.h contain the weights and biases for the BNN's convolutional 
-and fully connected layers. As explained before, these values were obtained by training the BNN model previously using Larq.
+Note that some information in the config.forest file will need to be changed if you are using it in your own workspace, such as the Absolute ROS2 dev_ws path and
+Absolute FPGA .bit file path. All of the .h files with the exception of mnist_bnn.h contain the weights for the BNN's convolutional, batch normalization, and 
+fully connected layers. As explained before, these values were obtained by training the BNN model using Larq.
 
 ### ros2_packages/
 
@@ -74,7 +74,7 @@ ros2 run forest_mnist_bnn_fpga_node fpga_node
 
 ### Latency Results
 
-The following table shows the average observed latency to perform the MNIST inference on one image on the Digilent Zybo Z7-20 FPGA, 
+The following table shows the average latency per image observed when performing MNIST inference on the Digilent Zybo Z7-20 FPGA, 
 and on an Intel Core i7-6500U processor:
 
 | Device | Device Latency (ms) | Ratio (Device Latency:FPGA Latency) |
