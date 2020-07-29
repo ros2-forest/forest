@@ -27,7 +27,7 @@ The files for this project are located in two directories: design_files/ and ros
 
 This directory contains the HLS files for the project (.cpp and .h files), as well as the config.forest file that is provided to Forest. 
 Note that some information in the config.forest file will need to be changed if you are using it in your own workspace, such as the Absolute ROS2 dev_ws path, 
-Absolute FPGA .bit file path, and User IP name. All of the .h files with the exception of mnist_cnn.h contain the weights and biases for the BNN's convolutional 
+Absolute FPGA .bit file path, and User IP name. All of the .h files with the exception of mnist_bnn.h contain the weights and biases for the BNN's convolutional 
 and fully connected layers. As explained before, these values were obtained by training the BNN model previously using Larq.
 
 ### ros2_packages/
@@ -38,9 +38,9 @@ The node send.py reads images from the MNIST test dataset, publishes them to the
 
 ## Running the Example Project
 
-This is a step-by-step of how to run the MNIST CNN example project.
+This is a step-by-step of how to run the MNIST BNN example project.
 
-1. Create a new Vivado HLS project and include the mnist_cnn.cpp and all .h files from the design_files/ folder. Synthesize the design and export it as an IP to Vivado.
+1. Create a new Vivado HLS project and include the mnist_bnn.cpp and all .h files from the design_files/ folder. Synthesize the design and export it as an IP to Vivado.
 
 2. Create a new block design in a new Vivado project and include the IP exported in Step 1. Also include the Zynq IP and a Vivado AXI Direct Memory Access (DMA) IP. Integrate the IPs and compile the design to generate a bitstream.
 
@@ -55,15 +55,15 @@ This is a step-by-step of how to run the MNIST CNN example project.
 7. In your PC, run the send and receive nodes in two different terminals.
 
 ```
-ros2 run mnist_cnn_send receive
+ros2 run mnist_bnn_send receive
 
-ros2 run mnist_cnn_send send
+ros2 run mnist_bnn_send send
 ```
 
 8. On PYNQ, run the ROS2-FPGA node.
 
 ```
-ros2 run forest_mnist_cnn_fpga_node fpga_node
+ros2 run forest_mnist_bnn_fpga_node fpga_node
 ```
 
 ## Results
@@ -79,16 +79,24 @@ and on an Intel Core i7-6500U processor:
 
 | Device | Device Latency (ms) | Ratio (Device Latency:FPGA Latency) |
 | :---:         |     ---:      |          ---: |
-| Intel CPU     |     58.8 |     8.53:1 |
-| FPGA   |    6.9 |     1:1|
+| Intel CPU     |     62.0 |     8.05:1 |
+| FPGA   |    7.7 |     1:1|
 
 ### Accuracy Results
 
+The following table shows the accuracy observed on the entire MNIST test dataset of the Digilent Zybo Z7-20 FPGA, 
+and of the Intel Core i7-6500U processor:
+
+| Device | Accuracy |
+| :---:         |     ---:      |
+| Intel CPU     |     98.57 % |
+| FPGA   |    98.53 % |
+
 ### Hardware Resource Usage
 
-The following image shows the hardware resource usage reported by Vivado HLS for the MNIST CNN design.
+The following image shows the hardware resource usage reported by Vivado HLS for the MNIST BNN design.
 
-![usage_cnn](https://github.com/ros2-forest/forest/blob/master/examples/mnist_cnn/mnist_cnn_usage.png)
+![usage_cnn](https://github.com/ros2-forest/forest/blob/master/examples/mnist_bnn/mnist_bnn_usage.png)
 
 ## References 
  
