@@ -25,9 +25,7 @@ This directory contains the images that are sent to the FPGA to be contrast stre
 This directory contains two ROS2 packages that shoudl be built ***on your PC*** (not on the Zynq board). They are the packages that define the nodes that send and receive image data to/from the FPGA. There is one change that has to be done for files in this directory. In the send_img.py file (https://github.com/ros2-forest/forest/blob/master/examples/contrast_stretch/cs_512_64b/ros2_packages/cs_512_64b/cs_512_64b/send_img.py), the line:
 
 ```Python
-
 image_tiff = Image.open('/home/danielpi/Desktop/work/case_studies/contrast/imgs/test/512/' + self.images[self.i])
-
 ```
 
 Must be changed to the location of the imgs/ folder in your file system.
@@ -53,19 +51,15 @@ This is a step-by-step of how to run the linear contrast stretch example project
 7. In your PC, run the send_img and receive_img nodes in two different terminals.
 
 ```
-
 ros2 run cs_512_64b receive_img
 
 ros2 run cs_512_64b send_img
-
 ```
 
 8. On PYNQ, run the ROS2-FPGA node.
 
 ```
-
 ros2 run forest_cs_512_64b_fpga_node fpga_node
-
 ```
 
 ## Results
@@ -81,17 +75,23 @@ on an Intel Core i7-6500U processor, and on the Digilent Z7-20 ARM Cortex A9 pro
 
 | Device | Device Latency (ms) | Ratio (Device Latency:FPGA Latency) |
 | :---:         |     ---:      |          ---: |
-| FPGA   | 270.7     | 1:1    |
 | Intel CPU     | 9832.9      | 36.3:1      |
+| FPGA   | 270.7     | 1:1    |
 | ARM     | 71237.3      | 262.2:1      |
 
 ### Hardware Resource Usage
 
 The following images show the hardware resource usage reported by Vivado HLS for the 128x128, 256x256, and 512x512 contrast stretch designs, respectively.
 
+- 128x128
+
 ![usage_128](https://github.com/ros2-forest/forest/blob/master/examples/contrast_stretch/cs_128_64b_usage.png)
 
+- 256x256
+
 ![usage_256](https://github.com/ros2-forest/forest/blob/master/examples/contrast_stretch/cs_256_64b_usage.png)
+
+- 512x512
 
 ![usage_512](https://github.com/ros2-forest/forest/blob/master/examples/contrast_stretch/cs_512_64b_usage.png)
 
