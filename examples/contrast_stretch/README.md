@@ -2,6 +2,8 @@
 
 This example project illustrates an application of a Forest-generated ROS2-FPGA node to image processing. The task is to perform a linear contrast strech operation. You can read more about this operation here [1].
 
+## Requirements
+
 ## Introduction and Design Files
 
 The contrast stretch operation was performed in three different grayscale image sizes: 128x128, 256x256, and 512x512. You can find the design files and images used in each of these examples in the cs_128_64b/, cs_256_64b/, and cs_512_64b/ directories. The images were obtained from online image databases [2,3].
