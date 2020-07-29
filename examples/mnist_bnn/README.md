@@ -84,7 +84,7 @@ and on an Intel Core i7-6500U processor:
 
 ### Accuracy Results
 
-The following table shows the accuracy observed on the entire MNIST test dataset of the Digilent Zybo Z7-20 FPGA, 
+The following table shows the accuracy observed on the entire MNIST test dataset (10,000 images) of the Digilent Zybo Z7-20 FPGA, 
 and of the Intel Core i7-6500U processor:
 
 | Device | Accuracy |
