@@ -4,7 +4,7 @@ FOrEST (FPGA-Oriented Easy Synthesizer Tool) is a tool that allows an easy and s
 
 ## Environment
 
-For the installation of PYNQ and ROS2 Eloquent on the Zynq boards, please refer to the step-by-step setup guide.
+For the installation of PYNQ and ROS2 Eloquent on the Zynq boards, please refer to the step-by-step [setup guide](https://github.com/ros2-forest/forest/tree/master/docs/setup_guide).
 
 #### PYNQ
 
@@ -32,7 +32,7 @@ Tested with designs from Vivado 2019.1 and Vivado HLS 2019.1.
 
 Go through the Setup Guide to install PYNQ v2.5 and ROS2 Eloquent, and then get the Forest tool in your Zynq board by cloning the Github repository.
 
-`git clone https://github.com/`
+`git clone https://github.com/ros2-forest/forest.git`
 
 ## Usage
 
@@ -52,12 +52,12 @@ python3 forest.py [-h] [-t] [-g -i ninputs -o noutputs]
 
 ## Tutorial
 
-See the Getting Started tutorial.
+See the [Getting Started](https://github.com/ros2-forest/forest/tree/master/docs/tutorials) tutorial.
 
 ## Examples
 
 1. Image Processing - Contrast Stretching
 
-2. Machine Learning - CNN for MNIST digit recognition
+2. Machine Learning - BNN for MNIST digit recognition
 
-## Publications
+3. Machine Learning - CNN for MNIST digit recognition
