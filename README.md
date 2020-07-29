@@ -1,6 +1,6 @@
 # ROS2 - Forest
 
-FOrEST (FPGA-Oriented Easy Synthesizer Tool) is a tool that allows an easy and seamless integration of HLS-generated FPGA logic into [ROS2](https://index.ros.org/doc/ros2/) systems. It automatically generates a ROS2-FPGA node, which can be used to accelerate and improve the accuracy of versatile and robust real-world robot applications.
+FOrEST (FPGA-Oriented Easy Synthesizer Tool) is a tool that allows an easy and seamless integration of HLS-generated FPGA logic into [ROS2](https://index.ros.org/doc/ros2/) systems. It automatically generates a ROS2-FPGA node, which can be used to accelerate versatile and robust real-world robot applications.
 
 ## Environment
 
@@ -30,7 +30,7 @@ Tested with designs from Vivado 2019.1 and Vivado HLS 2019.1.
 
 ## Installation
 
-Go through the Setup Guide to install PYNQ v2.5 and ROS2 Eloquent, and then get the Forest tool in your Zynq board by cloning the Github repository.
+Go through the [Setup Guide](https://github.com/ros2-forest/forest/tree/master/docs/setup_guide) to install PYNQ v2.5 and ROS2 Eloquent, and then get the Forest tool in your Zynq board by cloning the Github repository.
 
 `git clone https://github.com/ros2-forest/forest.git`
 
