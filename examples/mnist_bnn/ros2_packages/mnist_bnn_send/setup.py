@@ -22,7 +22,6 @@ setup(
         'console_scripts': [
 		'send = mnist_bnn_send.send:main',
 		'receive = mnist_bnn_send.receive:main',
-                'pc_sw_node = mnist_bnn_send.pc_sw_node:main',
         ],
     },
 )
