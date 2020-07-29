@@ -1,6 +1,6 @@
 # Forest Example Project - Linear Contrast Stretch
 
-This example project illustrates an application of a Forest-generated ROS2-FPGA node to image processing. The task is to perform a linear contrast strech operation. You can read more about this operation here [1].
+This example project illustrates an application of a Forest-generated ROS2-FPGA node to image processing. The task is to perform a linear contrast strech operation. You can read more about this operation in [1].
 
 ## Requirements
 
@@ -16,7 +16,7 @@ Each of the three subdirectories (cs_128_64b/, cs_256_64b/, and cs_512_64b/) con
 
 ### design_files/
 
-This directory contains the HLS files for the project (contrast_stretch.cpp and contrast_stretch.h), as well as the config.forest file that is provided to Forest. Note that some information in the config.forest file will need to be changed if you are using it in your own workspace, such as the Absolute ROS2 dev_ws path, Absolute FPGA .bit file path, and User IP name. 
+This directory contains the HLS files for the project (contrast_stretch.cpp and contrast_stretch.h), as well as the config.forest file that is provided to Forest. Note that some information in the config.forest file will need to be changed if you are using it in your own workspace, such as the Absolute ROS2 dev_ws path and Absolute FPGA .bit file path. 
 
 ### imgs/
 
@@ -32,7 +32,7 @@ image_tiff = Image.open('/home/danielpi/Desktop/work/case_studies/contrast/imgs/
 
 Must be changed to use the location of the imgs/ folder in your file system.
 
-The node send_img.py puts the image in `uint64` format, publishes it to the fpga_in topic and plots it. The node receive_img.py subscribes to the fpga_out topic, and plots the output image. There is also a pc_sw_node.py node, which performs the contrast stretch operation in software. You can use it to compare the time taken to perform the computation in SW and in the FPGA HW.
+The node send_img.py puts the image in `uint64` format, publishes it to the fpga_in topic and plots it. The node receive_img.py subscribes to the fpga_out topic, and plots the output image. There is also a pc_sw_node.py node, which performs the contrast stretch operation in software. You can use it to compare the time taken to perform the computation in software and in the FPGA hardware.
 
 ## Running the Example Project
 
@@ -72,8 +72,8 @@ ros2 run forest_cs_512_64b_fpga_node fpga_node
 
 ### Latency Results
 
-The following table shows the average observed latency to perform the contrast stretch operation on the Digilent Zybo Z7-20 FPGA, 
-on an Intel Core i7-6500U processor, and on the Digilent Z7-20 ARM Cortex A9 processor on the 512x512 images:
+The following table shows the average latency observed when performing the contrast stretch operation on the Digilent Zybo Z7-20 FPGA, 
+on an Intel Core i7-6500U processor, and on the Digilent Zybo Z7-20 ARM Cortex A9 processor on the 512x512 images:
 
 | Device | Device Latency (ms) | Ratio (Device Latency:FPGA Latency) |
 | :---:         |     ---:      |          ---: |
