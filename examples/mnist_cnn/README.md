@@ -19,7 +19,7 @@ The files for this project are located in two directories: design_files/ and ros
 
 ### design_files/
 
-This directory contains the HLS files for the project (.cpp and .h files), as well as the config.forest file that is provided to Forest. Note that some information in the config.forest file will need to be changed if you are using it in your own workspace, such as the Absolute ROS2 dev_ws path, Absolute FPGA .bit file path, and User IP name.
+This directory contains the HLS files for the project (.cpp and .h files), as well as the config.forest file that is provided to Forest. Note that some information in the config.forest file will need to be changed if you are using it in your own workspace, such as the Absolute ROS2 dev_ws path and Absolute FPGA .bit file path.
 All of the .h files with the exception of mnist_cnn.h contain the weights and biases for the CNN's convolutional and fully connected layers. As explained before, these values were obtained by training the CNN model previously using TensorFlow Keras.
 
 ### ros2_packages/
@@ -66,7 +66,7 @@ ros2 run forest_mnist_cnn_fpga_node fpga_node
 
 ### Latency Results
 
-The following table shows the average observed latency to perform the MNIST inference on one image on the Digilent Zybo Z7-20 FPGA, 
+The following table shows the average latency per image observed when performing MNIST inference on the Digilent Zybo Z7-20 FPGA, 
 and on an Intel Core i7-6500U processor:
 
 | Device | Device Latency (ms) | Ratio (Device Latency:FPGA Latency) |
