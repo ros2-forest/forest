@@ -1,0 +1,35 @@
+**** 1- Setup Information ****
+
+Forest project name:
+
+Absolute ROS2 dev_ws path:
+
+Absolute FPGA .bit file path:
+
+User IP name:
+
+**** 2- Input definitions ****
+{% for i in range(n_in) %}
+// Input {{ i+1 }}
+
+Input name:
+
+Protocol:
+
+Type:
+
+Address Offset (if AXI-Lite):
+{% endfor %}
+**** 3- Output definitions ****
+{% for i in range(n_out) %}
+// Output {{ i+1 }}
+
+Output name:
+
+Protocol:
+
+Type:
+
+Address Offset (if AXI-Lite):
+{% endfor %}
+

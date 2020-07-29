@@ -1,0 +1,44 @@
+**** 1- Setup Information ****
+
+Forest project name:stream_add_num
+
+Absolute ROS2 dev_ws path:/home/xilinx/work/dev_ws
+
+Absolute FPGA .bit file path:/home/xilinx/work/vivado_prjs/stream_add_num/overlays/stream_add_num.bit
+
+User IP name:get_stream_sum_0
+
+**** 2- Input definitions ****
+
+// Input 1
+
+Input name:list
+
+Protocol:stream
+
+Type:int32[100]
+
+Address Offset (if AXI-Lite):
+
+// Input 2
+
+Input name:num
+
+Protocol:lite
+
+Type:int32
+
+Address Offset (if AXI-Lite):16
+
+**** 3- Output definitions ****
+
+// Output 1
+
+Output name:sum_list
+
+Protocol:stream
+
+Type:int32[100]
+
+Address Offset (if AXI-Lite):
+

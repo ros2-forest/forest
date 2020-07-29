@@ -1,0 +1,74 @@
+**** 1- Setup Information ****
+
+Forest project name:add_mul
+
+Absolute ROS2 dev_ws path:/home/xilinx/work/dev_ws
+
+Absolute FPGA .bit file path:/home/xilinx/work/vivado_prjs/add_mul/overlays/add_mul.bit
+
+User IP name:add_mul_0
+
+**** 2- Input definitions ****
+
+// Input 1
+
+Input name:a
+
+Protocol:lite
+
+Type:int32
+
+Address Offset (if AXI-Lite):16
+
+// Input 2
+
+Input name:b
+
+Protocol:lite
+
+Type:int32
+
+Address Offset (if AXI-Lite):24
+
+// Input 3
+
+Input name:d
+
+Protocol:lite
+
+Type:float64
+
+Address Offset (if AXI-Lite):40
+
+// Input 4
+
+Input name:e
+
+Protocol:lite
+
+Type:float64
+
+Address Offset (if AXI-Lite):52
+
+**** 3- Output definitions ****
+
+// Output 1
+
+Output name:c
+
+Protocol:lite
+
+Type:int32[2]
+
+Address Offset (if AXI-Lite):32
+
+// Output 2
+
+Output name:f
+
+Protocol:lite
+
+Type:float64[2]
+
+Address Offset (if AXI-Lite):64
+

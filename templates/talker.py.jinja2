@@ -1,0 +1,45 @@
+import rclpy
+from rclpy.node import Node
+
+import random
+
+from {{ prj_name }}_interface.msg import FpgaIn
+
+class TalkerNode(Node):
+
+    def __init__(self):
+        super().__init__('talker')
+        self.publisher_ = self.create_publisher(FpgaIn, 'fpga_in_topic', {{ qos }})
+        timer_period = 2  # Frequency of publishing
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+
+    def timer_callback(self):
+        msg = FpgaIn()
+        {%- for in_signal, desc in in_map.items() %}
+        {%- if desc.type == "int" and desc.arr == False %}
+        msg.{{ in_signal }} = random.randint(0, 5)
+        {%- elif desc.type == "float" and desc.arr == False %}
+        msg.{{ in_signal }} = random.random()
+        {%- elif desc.type == "int" and desc.arr == True %}
+        for i in range({{ desc.n_elem }}):
+            msg.{{ in_signal }}[i] = random.randint(0, 5) 
+        {%- elif desc.type == "float" and desc.arr == True %}
+        for i in range({{ desc.n_elem }}):
+            msg.{{ in_signal }}[i] = random.random()
+        {%- endif %}
+        {%- endfor %}
+        self.publisher_.publish(msg)
+        self.get_logger().info("Publishing: {}".format(msg))
+
+def main(args=None):
+    rclpy.init(args=args)
+
+    talker = TalkerNode()
+
+    rclpy.spin(talker)
+
+    talker.destroy_node()
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()

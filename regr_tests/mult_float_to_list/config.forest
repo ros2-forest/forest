@@ -1,0 +1,44 @@
+**** 1- Setup Information ****
+
+Forest project name:mult_float_list
+
+Absolute ROS2 dev_ws path:/home/xilinx/work/dev_ws
+
+Absolute FPGA .bit file path:/home/xilinx/work/vivado_prjs/mult_float_to_list/overlays/mult_float_to_list.bit
+
+User IP name:mult_float_to_list_0
+
+**** 2- Input definitions ****
+
+// Input 1
+
+Input name:num
+
+Protocol:lite
+
+Type:float64
+
+Address Offset (if AXI-Lite):16
+
+// Input 2
+
+Input name:list
+
+Protocol:lite
+
+Type:float64[3]
+
+Address Offset (if AXI-Lite):32
+
+**** 3- Output definitions ****
+
+// Output 1
+
+Output name:list_out
+
+Protocol:lite
+
+Type:float64[3]
+
+Address Offset (if AXI-Lite):64
+

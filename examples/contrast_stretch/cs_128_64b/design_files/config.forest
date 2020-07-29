@@ -1,0 +1,34 @@
+**** 1- Setup Information ****
+
+Forest project name:cs_128_64b
+
+Absolute ROS2 dev_ws path:/home/xilinx/work/dev_ws
+
+Absolute FPGA .bit file path:/home/xilinx/work/case_studies/contrast_stretch/cs_128_64b/overlays/contrast_stretch.bit
+
+User IP name:do_stretch_0
+
+**** 2- Input definitions ****
+
+// Input 1
+
+Input name:image_in
+
+Protocol:stream
+
+Type:uint64[2048]
+
+Address Offset (if AXI-Lite):
+
+**** 3- Output definitions ****
+
+// Output 1
+
+Output name:image_out
+
+Protocol:stream
+
+Type:uint64[2048]
+
+Address Offset (if AXI-Lite):
+

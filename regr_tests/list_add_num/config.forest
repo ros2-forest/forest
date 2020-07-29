@@ -1,0 +1,44 @@
+**** 1- Setup Information ****
+
+Forest project name:list_add_num
+
+Absolute ROS2 dev_ws path:/home/xilinx/work/dev_ws
+
+Absolute FPGA .bit file path:/home/xilinx/work/vivado_prjs/list_add_num/overlays/list_add_num.bit
+
+User IP name:add_num_to_list_0
+
+**** 2- Input definitions ****
+
+// Input 1
+
+Input name:list
+
+Protocol:lite
+
+Type:int32[5]
+
+Address Offset (if AXI-Lite):32
+
+// Input 2
+
+Input name:num
+
+Protocol:lite
+
+Type:uint8
+
+Address Offset (if AXI-Lite):16
+
+**** 3- Output definitions ****
+
+// Output 1
+
+Output name:res
+
+Protocol:stream
+
+Type:uint8[5]
+
+Address Offset (if AXI-Lite):
+

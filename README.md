@@ -1,2 +1,63 @@
-# forest
-Automated Integration of High-Level Synthesis FPGA Modules with ROS2 Systems
+# ROS2 - Forest
+
+FOrEST (FPGA-Oriented Easy Synthesizer Tool) is a tool that allows an easy and seamless integration of HLS-generated FPGA logic into [ROS2](https://index.ros.org/doc/ros2/) systems. It automatically generates a ROS2-FPGA node, which can be used to accelerate and improve the accuracy of versatile and robust real-world robot applications.
+
+## Environment
+
+For the installation of PYNQ and ROS2 Eloquent on the Zynq boards, please refer to the step-by-step setup guide.
+
+#### PYNQ
+
+Forest runs on [PYNQ version 2.5](https://pynq.readthedocs.io/en/v2.5/index.html).
+
+#### Python
+
+Tested with Python 3.6.
+
+#### Required Python Packages
+
+The following Python packages are required:
+
+`pip3 install random time struct numpy subprocess sys os getopt jinja2`
+
+#### ROS2
+
+[ROS2 Eloquent](https://index.ros.org/doc/ros2/Installation/Eloquent/Linux-Development-Setup/), built from source.
+
+#### Vivado
+
+Tested with designs from Vivado 2019.1 and Vivado HLS 2019.1.
+
+## Installation
+
+Go through the Setup Guide to install PYNQ v2.5 and ROS2 Eloquent, and then get the Forest tool in your Zynq board by cloning the Github repository.
+
+`git clone https://github.com/`
+
+## Usage
+
+```
+python3 forest.py [-h] [-t] [-g -i ninputs -o noutputs]
+
+-h or --help: Prints the usage statement for the script
+
+-t or --test: Generates simple talker and listener nodes along with the FPGA ROS node
+
+-g or --genconfig: Generates a template config file to be used by the script
+
+-i or --ninputs: Number of input signals for the template config file
+
+-o or --noutputs: Number of output signals for the template config file
+```
+
+## Tutorial
+
+See the Getting Started tutorial.
+
+## Examples
+
+1. Image Processing - Contrast Stretching
+
+2. Machine Learning - CNN for MNIST digit recognition
+
+## Publications

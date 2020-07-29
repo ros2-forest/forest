@@ -1,0 +1,34 @@
+**** 1- Setup Information ****
+
+Forest project name:img_hist
+
+Absolute ROS2 dev_ws path:/home/xilinx/work/dev_ws
+
+Absolute FPGA .bit file path:/home/xilinx/work/vivado_prjs/img_hist/overlays/img_hist.bit
+
+User IP name:get_hist_0
+
+**** 2- Input definitions ****
+
+// Input 1
+
+Input name:image
+
+Protocol:lite
+
+Type:uint8[784]
+
+Address Offset (if AXI-Lite):1024
+
+**** 3- Output definitions ****
+
+// Output 1
+
+Output name:hist
+
+Protocol:lite
+
+Type:int32[256]
+
+Address Offset (if AXI-Lite):2048
+
