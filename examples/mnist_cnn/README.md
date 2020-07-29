@@ -76,6 +76,14 @@ and on an Intel Core i7-6500U processor:
 
 ### Accuracy Results
 
+The following table shows the accuracy observed on the entire MNIST test dataset (10,000 images) of the Digilent Zybo Z7-20 FPGA, 
+and of the Intel Core i7-6500U processor:
+
+| Device | Accuracy |
+| :---:         |     ---:      |
+| Intel CPU     |     99.09 % |
+| FPGA   |    99.04 % |
+
 ### Hardware Resource Usage
 
 The following image shows the hardware resource usage reported by Vivado HLS for the MNIST CNN design.
