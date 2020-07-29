@@ -23,7 +23,7 @@ class RecNode(Node):
         self.get_logger().info("Prediction:{}".format(msg.digit[0]))
         #if msg.label == msg.digit[0]:
             #self.correct+=1
-        self.get_logger().info("{} - t4:{}".format(self.i, self.t4))
+        #self.get_logger().info("{} - t4:{}".format(self.i, self.t4))
         self.i+=1
         #self.get_logger().info("Accuracy: {}/{} ({:.2f}%)".format(self.correct, self.i, (self.correct/self.i)*100))
 
