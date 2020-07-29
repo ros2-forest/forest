@@ -53,7 +53,7 @@ class SendNode(Node):
             label = int(self.y_test[self.i])
             # Prepare image data for publishing
             msg.image_in = img_data
-            msg.label = label
+            #msg.label = label
             self.t1 = time.time()
             self.publisher_.publish(msg)
             # Plot image
