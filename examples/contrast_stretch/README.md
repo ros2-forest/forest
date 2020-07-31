@@ -2,6 +2,8 @@
 
 This example project illustrates an application of a Forest-generated ROS2-FPGA node to image processing. The task is to perform a linear contrast strech operation. You can read more about this operation in [1].
 
+![cs_256_gif](../../docs/cs_256_gif.gif)
+
 ## Requirements
 
 ## Introduction and Design Files
