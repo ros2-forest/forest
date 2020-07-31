@@ -2,6 +2,8 @@
 
 FOrEST (FPGA-Oriented Easy Synthesizer Tool) is a tool that allows an easy and seamless integration of HLS-generated FPGA logic into [ROS2](https://index.ros.org/doc/ros2/) systems. It automatically generates a ROS2-FPGA node, which can be used to accelerate versatile and robust real-world robot applications.
 
+![mnist_bnn_gif](docs/mnist_bnn_gif.gif)
+
 ## Environment
 
 For the installation of PYNQ and ROS2 Eloquent on the Zynq boards, please refer to the step-by-step [setup guide](https://github.com/ros2-forest/forest/tree/master/docs/setup_guide).
