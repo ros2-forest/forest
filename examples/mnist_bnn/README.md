@@ -6,6 +6,8 @@ networks to run on smaller FPGA boards.
 
 This example project consists of a BNN running on the FPGA being applied to the MNIST digit recognition task.
 
+![mnist_bnn_gif](../../docs/mnist_bnn_gif.gif)
+
 ## Requirements
 
 ## Introduction and Design Files
