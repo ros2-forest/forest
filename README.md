@@ -2,6 +2,9 @@
 
 FOrEST (FPGA-Oriented Easy Synthesizer Tool) is a tool that allows an easy and seamless integration of HLS-generated FPGA logic into [ROS2](https://index.ros.org/doc/ros2/) systems. It automatically generates a ROS2-FPGA node, which can be used to accelerate versatile and robust real-world robot applications.
 
+Below you can see an example of a ROS2 node that makes use of FPGA hardware to perform the MNIST digit recognition task through convolutional neural networks running. The 
+output of the FPGA CNN hardware (FPGA prediction) is printed to the screen by another ROS2 node.
+
 ![mnist_bnn_gif](docs/mnist_bnn_gif.gif)
 
 ## Environment
