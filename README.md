@@ -22,7 +22,7 @@ Tested with Python 3.6.
 
 The following Python packages are required:
 
-`pip3 install random time struct numpy subprocess sys os getopt jinja2`
+`pip3 install numpy jinja2`
 
 #### ROS2
 
