@@ -6,6 +6,18 @@ This example project illustrates an application of a Forest-generated ROS2-FPGA 
 
 ## Requirements
 
+- Forest and all of its associated requirements installed and setup on a Zynq board.
+
+- Vivado and Vivado HLS 2019.1.
+
+- Computer with Ubuntu 18.04.
+
+- Matplotlib and numpy installed on the computer: `pip3 install numpy matplotlib`
+
+- [ROS2 Eloquent](https://index.ros.org/doc/ros2/Installation/Eloquent/) installed on the computer.
+
+- Network setup to transfer data between the computer and the Zynq board.
+
 ## Introduction and Design Files
 
 The contrast stretch operation was performed in three different grayscale image sizes: 128x128, 256x256, and 512x512. You can find the design files and images used in each of these examples in the cs_128_64b/, cs_256_64b/, and cs_512_64b/ directories. The images were obtained from online image databases [2,3].
@@ -67,10 +79,6 @@ ros2 run forest_cs_512_64b_fpga_node fpga_node
 ```
 
 ## Results
-
-### Demo
-
-- ADD VIDEO
 
 ### Latency Results
 
