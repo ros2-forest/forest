@@ -2,7 +2,13 @@
 
 **FOrEST** (FPGA-Oriented Easy Synthesizer Tool) is a tool that allows an easy and seamless integration of HLS-generated FPGA logic into [ROS2](https://index.ros.org/doc/ros2/) systems. It automatically generates a ROS2-FPGA node, which can be used to accelerate versatile and robust real-world robot applications.
 
-Below you can see an example of a Forest-generated ROS2 node that makes use of FPGA hardware to perform the MNIST digit recognition task through convolutional neural networks. The output of the FPGA CNN hardware (FPGA prediction) is printed to the screen by another ROS2 node, which runs on a PC.
+The diagram of a Forest-generated ROS2-FPGA node is shown below. Forest automatically creates a PYNQ driver to communicate between ROS2 and FPGA, and generates and builds 
+all of the files necessary to encompass the FPGA logic within a ROS2 package, allowing it to be easily accesible to other ROS2 nodes running on the PS part of an FPGA SoC
+or even distributed ROS2 nodes that communicate with the FPGA SoC PS over a network.
+
+![ros2-fpga-node](docs/ros2-fpga-node-png.png)
+
+Below you can see an example of a Forest-generated ROS2 node that makes use of FPGA hardware to perform the MNIST digit recognition task through convolutional neural networks. The output of the FPGA CNN hardware (FPGA prediction) is printed to the terminal by another ROS2 node, which runs on a PC.
 
 ![mnist_bnn_gif](docs/mnist_bnn_gif.gif)
 
