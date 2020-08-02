@@ -8,7 +8,7 @@ or even distributed ROS2 nodes that communicate with the FPGA SoC PS over a netw
 
 ![ros2-fpga-node](docs/ros2-fpga-node-png.png)
 
-Below you can see an example of a Forest-generated ROS2 node that makes use of FPGA hardware to perform the MNIST digit recognition task through convolutional neural networks. The output of the FPGA CNN hardware (FPGA prediction) is printed to the terminal by another ROS2 node, which runs on a PC.
+Below you can see an example of a Forest-generated ROS2 node that makes use of FPGA hardware to perform the MNIST digit recognition task through a convolutional neural network. The output of the FPGA CNN hardware (FPGA prediction) is printed to the terminal by another ROS2 node, which runs on a PC.
 
 ![mnist_bnn_gif](docs/mnist_bnn_gif.gif)
 
